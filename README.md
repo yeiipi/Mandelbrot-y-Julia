@@ -1,1 +1,1 @@
-# Manelbrot-y-Julia
+# Mandelbrot y Julia
