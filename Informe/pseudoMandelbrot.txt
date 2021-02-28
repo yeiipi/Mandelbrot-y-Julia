@@ -1,0 +1,25 @@
+FUNCIÓN f_mandelbrot
+    PARÁMETROS
+        res: Resolución de la imágen (entre mayor res mayor resolución).
+        col: Cantidad de iteraciónes de Z.
+          c: Constante con la que se inica cada punto de Z.
+    RESTRICCIÓNES
+        n: número entero
+        c: número complejo
+    CORRER
+        constante lim = Límites verticales y horizontales de la gráfica
+        constante C = (x,y*i) entre [-lim,lim] con res pasos
+        variable Z = matriz de c con tamaño C
+
+        // Se itera sobre Z
+        // Para ver si cada valor en Z bajo col iteraciones converge a infinito.
+        INICIAR FOR desde 1 hasta col
+            Z = Z^2 + C
+        TERMINAR FOR
+
+        // Este último paso se hace para transformar el rango de los valores
+        // [0,Inf] -> [1,0]
+        W = exponencial del -abs de Z
+
+        RETORNAR W
+TERMINAR FUNCIÓN

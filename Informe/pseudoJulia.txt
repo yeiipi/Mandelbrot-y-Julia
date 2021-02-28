@@ -1,0 +1,25 @@
+FUNCIÓN f_set_de_julia
+    PARÁMETROS
+        res: Resolución de la imágen (entre mayor res mayor resolución).
+        col: Cantidad de iteraciónes de Z.
+          n: Exponente de Z.
+          c: Constante que se le suma a cada iteración de Z.
+    RESTRICCIÓNES
+        n: número entero
+        c: número complejo
+    CORRER
+        constate lim  = Límites verticales y horizontales de la gráfica
+        variable Z  = (x,y*i) entre [-lim,lim] con res pasos
+
+        // Se itera sobre Z
+        // Para ver si cada valor en Z bajo col iteraciones converge a infinito.
+        INICIAR FOR desde 1 hasta col
+            Z = Z^n +c
+        TERMINAR FOR
+
+        // Este último paso se hace para transformar el rango de los valores
+        // [0,Inf] -> [1,0]
+        W = exponencial del -abs de Z
+
+        RETORNAR W
+TERMINAR FUNCIÓN

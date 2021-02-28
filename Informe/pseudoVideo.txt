@@ -1,0 +1,37 @@
+// c es  la constante que aparece en la ecuación
+// de Julia.
+
+variable I   = Vector de valores posibles para Im(c)
+variable r   = Re(c) 
+variable v   = Entorno de video
+variable n   = Exponente para la función
+variable col = Vector con escala de colores
+
+
+v.desde = Punto de inicio para el video
+v.hasta = Punto final para el video
+v.steps = Cantidad de valores entre inicio y final
+
+
+// Para generar la sensación de movimiento 
+// se utilizan 24 frames por segundo
+v.frameRate = 24
+
+// Calidad del video definida entre 0 y 100
+v.Quality = 100
+
+ 
+INICIAR v
+
+INICIAR FOR desde h = 0 hasta h = tamaño de I
+
+    variable v_index = valor en I con index h
+    variable W = f_set_de_julia(n,r+1i*v_index)
+    
+    GENERAR IMAGEN CON W UTILIZANDO col
+    AGREGAR IMAGEN A V COMO FRAME
+    COMPILAR VIDEO
+    
+TERMINAR FOR
+
+TERMINAR v
