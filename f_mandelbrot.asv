@@ -5,15 +5,8 @@ function [W] = f_mandelbrot(res, col,c)
 %               ===========================================================
 %               PARÁMETROS:
 %                  - res : resolución de la imágen, cantidad tamañod de la
-%                          matriz Z.
-%                  - col : Cantidad de iteraciones de Z
-%                  -   c : Constante con la que se inicia cada punto de Z
-%               ===========================================================
-%               RETORNA:
-%                  - W : Matriz con valores de [1,0] que cumplen las
-%                        propiedades del set de Mandelbrot.
-
-
+%                          matriz Z.:
+%              
 
 
 l=1.5;
@@ -25,9 +18,6 @@ Z= repmat(c,size(C));
 for k=1:col
     Z = Z.^2 + C;
 end
-
-% Este último paso se hace para transformar el rango de los valores
-% [0,Inf] -> [1,0]
 W = exp(-abs(Z));
 
 end
