@@ -1,0 +1,56 @@
+\section{Conjuntos Fractales}
+En este taller evaluaremos el comportamiento de los números complejos al ser
+iterados mediante funciones complejas. Además, se trabajará con el conjunto de
+Mandelbrot y Julia, los cuales son de la familia de los conjuntos fractales.
+
+En particular las funciones holomorfas que se estudiaran son las del modo $f(z)
+= z^n+ c$ donde $n$ pertenece a los reales.
+
+Estos dos conjuntos se pueden representar de manera gráfica mediante el numero
+de iteraciones o también llamado tiempo de escape. Los colores indicaran la
+velocidad de escape, es decir, el numero de iteraciones que le toma al numero
+divergir, entre mas iteraciones, mas intenso es el color.
+
+\subsection{Conjunto de Mandelbrot}
+El conjunto de Mandelbrot es un conjuto de números complejos $c$ para la
+función $f_{c}(z)$ = $z^{2}$ + $c$. Ahora bien, Mandelbrot representa al grupo
+de números complejos w que mediante la iteración de la función compleja
+$F(w)=z^2+w$. No diverge, es decir, esta sucesión esta acotada en su valor
+absoluto.
+
+Este conjunto se conoce así en honor a Benoit Mandelbrot, un matemático polaco
+que investigo sobre este tema en la época de los setenta.
+
+Se verá en la siguiente subescción el Conjunto de Julia, y a diferencia de
+este, de los cuáles existe uno distinto dependiendo del parámetro complejo $c$,
+el conjunto de Mandelbrot es único.
+
+\subsection{Conjunto de Julia}
+El Conjunto de Julia es un caso particular del Conjunto de Mandelbrot, su
+nombre es en honor al matemático francés Gaston Julia que vivió a inicios y
+mitades del siglo XX.
+
+Este grupo se obtiene al evaluar números complejos en la función $f(z) =
+g(z)+c$ y al igual que la anterior, converge.
+El conjunto de Julia correspondiente a un valor determinado de la constante $c$
+se genera computacionalmente a través de la aplicación de la iteración
+$z_{n+1}=z_n^2+c$ a cada uno de los puntos de una red definida en una región
+adeacuada del plano complejo. Para hacerlo es necesario escribir la operación
+de interés en términos de sus partes real e imaginaria. Esto es:
+
+    \begin{align*}
+        &z_{n+1}=(a_{n+1},~b_{n+1})~;~z_n=(a_n,~b_n)~;~c=(c_r,~c_i) \\
+        &z_{n+1}=z_n^2+c=(a_n,~b_n)(a_n,~b_n)+(c_r,~c_i)=(a_{n+1},~b_{n+1}) \\
+        &(a_{n+1},~b_{n+1})=(a_n^2-b_n^2+c_r,~2a_n b_n+c_i)
+    \end{align*}
+
+Cuando se igualan dos números complejos, necesariamente se cumple que sus
+partes, real e imaginaria, son iguales entre sí, es decir:
+\begin{itemize}
+    \item Real: $a_{n+1}=a_n^2-b_n^2+c_r$
+    \item Imaginaria: $b_{n+1}=2a_n b_n+c_i$
+\end{itemize}
+
+Con esto se logra convertir la iteración de números complejos
+$z_{n+1}=z_n^2+c$, en dos iteracione de números reales que son más fáciles de
+manejar.
